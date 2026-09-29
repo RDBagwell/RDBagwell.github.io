@@ -1,0 +1,64 @@
+@import 'tailwindcss';
+
+/* Dark mode is driven by a `dark` class on <html> (set by public/theme-init.js
+   and the theme toggle) so the user's choice can override the system setting. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+  body {
+    @apply bg-white font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100;
+  }
+  /* Anchored sections clear the sticky header. */
+  section[id],
+  main[id] {
+    scroll-margin-top: 5rem;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-indigo-600 dark:outline-indigo-300;
+  }
+}
+
+/* Shared component styles, declared as utilities so they can be composed. */
+@utility btn {
+  @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold transition-colors;
+}
+@utility btn-primary {
+  @apply btn bg-indigo-700 text-white hover:bg-indigo-800 dark:bg-indigo-300 dark:text-slate-950 dark:hover:bg-indigo-200;
+}
+@utility btn-secondary {
+  @apply btn border border-slate-300 bg-white text-slate-900 hover:bg-slate-100 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800;
+}
+@utility link {
+  @apply font-medium text-indigo-700 underline decoration-indigo-700/40 underline-offset-4 hover:decoration-indigo-700 dark:text-indigo-300 dark:decoration-indigo-300/40 dark:hover:decoration-indigo-300;
+}
+@utility section-heading {
+  @apply text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl dark:text-white;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
