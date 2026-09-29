@@ -1,0 +1,116 @@
+import type { Project } from './types';
+
+// To add a project: add an object to this array, drop its screenshot in
+// public/projects/, and push. Featured projects appear first, in array order.
+export const projects: Project[] = [
+  {
+    slug: 'manuscript-tracker',
+    title: 'Manuscript Tracker',
+    tagline: 'Query tracking for working authors.',
+    description:
+      "A full-stack app for managing literary agent submissions, built by a novelist in the middle of querying. Every query is an append-only event ledger (sent, partial requested, materials sent, rejected), so status and response-time stats come straight from the history. It warns when an agency's “a no from one is a no from all” policy applies and schedules follow-up nudges.",
+    tech: [
+      'Laravel 13',
+      'React 18',
+      'TypeScript',
+      'PostgreSQL',
+      'Redis',
+      'Docker',
+      'Sanctum auth',
+      '45 feature tests',
+      'GitHub Actions CI',
+    ],
+    featured: true,
+    status: 'local',
+    links: { code: 'https://github.com/RDBagwell/manuscript-tracker' },
+    image: '/projects/manuscript-tracker.webp',
+    imageWidth: 960,
+    imageHeight: 600,
+    imageFocus: 'top-left',
+    imageAlt:
+      'Manuscript Tracker queries screen: a list of agent queries, one expanded to show its correspondence log of sent, partial requested and materials sent events.',
+  },
+  {
+    slug: 'chat-mafia',
+    title: 'Chat Mafia',
+    tagline: 'Real-time multiplayer Mafia in the browser.',
+    description:
+      'The classic social deduction game, played online with friends. Separate General, Mafia and Dead chats with server-enforced permissions: fallen players become observers who can only talk to each other. It has host controls including kicking players, bots to fill empty seats, and groundwork for AI players. Built security-first: the server is authoritative, and every input is validated and rate-limited.',
+    tech: ['Node.js', 'Express', 'Socket.io', 'JavaScript', 'Zod', 'Vitest', 'GitHub Pages + Render'],
+    featured: true,
+    status: 'live',
+    links: {
+      demo: 'https://rdbagwell.github.io/Chat_Mafia_Game/',
+      code: 'https://github.com/RDBagwell/Chat_Mafia_Game',
+    },
+    demoLabel: 'Play',
+    // TODO(robert): replace the placeholder with a real screenshot (e.g. /projects/chat-mafia.webp).
+    image: '/projects/chat-mafia-placeholder.svg',
+    imageWidth: 1280,
+    imageHeight: 720,
+    imageAlt: 'Placeholder graphic for Chat Mafia; a screenshot is coming soon.',
+    note: 'The game server sleeps when idle — the first connection can take up to a minute.',
+  },
+  {
+    slug: 'bull-rush',
+    title: 'Bull Rush',
+    tagline: 'A 2D canvas herding game.',
+    description:
+      'Steer a bull with the mouse to shepherd eggs and hatchlings to safety while enemies charge across the field. Features circle-collision physics, sprite animation and particle effects. Save 50 to win.',
+    tech: ['JavaScript', 'HTML Canvas'],
+    featured: false,
+    status: 'live',
+    links: {
+      demo: 'https://rdbagwell.github.io/Bull_Rush/',
+      code: 'https://github.com/RDBagwell/Bull_Rush',
+    },
+    demoLabel: 'Play',
+    image: '/projects/bull-rush.webp',
+    imageWidth: 960,
+    imageHeight: 540,
+    imageAlt:
+      'Bull Rush gameplay: a blue horned bull among giant blue mushrooms and ferns, with spotted eggs and red clawed enemies on a dirt field.',
+    // TODO(robert): optional tutorial credit, e.g. note: 'Built following a tutorial by …'
+  },
+  {
+    slug: 'shooter',
+    title: 'Shooter',
+    tagline: 'A side-scrolling arcade shooter.',
+    description:
+      'Arrow keys to move, Space to fire. Manage recharging ammo against waves of enemies with different toughness, up to a heavily armored Hivewhale. Features parallax scrolling backgrounds, particle explosions and sound effects.',
+    tech: ['JavaScript', 'HTML Canvas', 'Web Audio'],
+    featured: false,
+    status: 'live',
+    links: {
+      demo: 'https://rdbagwell.github.io/Shooter/',
+      code: 'https://github.com/RDBagwell/Shooter',
+    },
+    demoLabel: 'Play',
+    image: '/projects/shooter.webp',
+    imageWidth: 700,
+    imageHeight: 500,
+    imageAlt:
+      'Shooter gameplay: a mechanical seahorse and a toothy mechanical anglerfish over a steampunk city of gears and pipes, with the score and ammo bar along the top.',
+    // TODO(robert): optional tutorial credit, e.g. note: 'Built following a tutorial by …'
+  },
+  {
+    slug: '3d-game',
+    title: '3D Game',
+    tagline: 'A 3D action prototype.',
+    description:
+      'A third-person 3D prototype with a physics-driven animated character, an enemy robot, Xbox gamepad controls and positional sound.',
+    tech: ['Three.js', 'Rapier physics', 'Vite', 'JavaScript'],
+    featured: false,
+    status: 'coming-soon',
+    // No demo yet: the repo has no Pages build step, so its live page doesn't run.
+    links: { code: 'https://github.com/RDBagwell/3D_Game' },
+    // TODO(robert): replace the placeholder with a real screenshot.
+    image: '/projects/3d-game-placeholder.svg',
+    imageWidth: 1280,
+    imageHeight: 720,
+    imageAlt: 'Placeholder graphic for 3D Game; a screenshot is coming soon.',
+  },
+];
+
+export const featuredProjects = projects.filter((p) => p.featured);
+export const otherProjects = projects.filter((p) => !p.featured);
