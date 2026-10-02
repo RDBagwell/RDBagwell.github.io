@@ -44,12 +44,50 @@ export const projects: Project[] = [
       code: 'https://github.com/RDBagwell/Chat_Mafia_Game',
     },
     demoLabel: 'Play',
-    // TODO(robert): replace the placeholder with a real screenshot (e.g. /projects/chat-mafia.webp).
-    image: '/projects/chat-mafia-placeholder.svg',
+    image: '/projects/chat-mafia.webp',
     imageWidth: 1280,
     imageHeight: 720,
-    imageAlt: 'Placeholder graphic for Chat Mafia; a screenshot is coming soon.',
+    imageAlt: 'Chat Mafia game lobby screenshot.',
     note: 'The game server sleeps when idle — the first connection can take up to a minute.',
+  },
+    {
+    slug: 'rpg',
+    title: 'RPG Demo',
+    tagline: 'RPG Demo in the browser.',
+    description:
+      'A classic top-down RPG in the browser, built on a small custom 2D engine instead of a game framework. You explore an island, talk to people, carry an inventory, level up and fight turn-based battles.',
+    tech: ['Node.js', 'JavaScript','HTML Canvas', 'Web Audio', 'GitHub Actions CI'],
+    featured: false,
+    status: 'live',
+    links: {
+      demo: 'https://rpg-demo.onrender.com/',
+      code: 'https://github.com/RDBagwell/RPG_Game',
+    },
+    image: '/projects/rpg.webp',
+
+    imageWidth: 1280,
+    imageHeight: 720,
+    imageAlt: 'Placeholder graphic for RPG; a screenshot is coming soon.',
+    note: 'The game server sleeps when idle — the first connection can take up to a minute.',
+  },
+  {
+    slug: 'reading-game',
+    title: 'Reading Game',
+    tagline: 'Reading Game for children.',
+    description:
+      'When my daughter was in first grade, I noticed she didn\'t like the reading assignments her teacher had her do. She, however, liked playing video games; that is when I got the idea to create this game.',
+    tech: ['JavaScript', 'HTML Canvas', 'Web Audio'],
+    featured: false,
+    status: 'live',
+    links: {
+      demo: 'https://rdbagwell.github.io/Reading_Game/',
+      code: 'https://github.com/RDBagwell/Reading_Game'
+    },
+    image: '/projects/reading-game.webp',
+    demoLabel: 'Play',
+    imageWidth: 960,
+    imageHeight: 720,
+    imageAlt: 'Reading Game; Help your child learn to read through interactive gameplay.',
   },
   {
     slug: 'bull-rush',
