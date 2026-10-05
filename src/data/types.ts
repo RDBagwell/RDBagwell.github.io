@@ -15,8 +15,8 @@ export type Project = {
   links: {
     /** Playable / live URL. Omit it and the Play button is hidden. */
     demo?: string;
-    /** Source code URL. */
-    code: string;
+    /** Source code URL. Omit it (e.g. for a private repo) and the Code button is hidden. */
+    code?: string;
   };
   /** Label for the demo button. Defaults to "Live demo". */
   demoLabel?: string;

@@ -44,7 +44,8 @@ describe('projects data', () => {
     });
 
     it('has valid https links', () => {
-      expect(isHttpsUrl(p.links.code)).toBe(true);
+      if (p.links.code !== undefined) expect(isHttpsUrl(p.links.code)).toBe(true);
+      expect(Boolean(p.links.code || p.links.demo), 'needs a code or demo link').toBe(true);
       if (p.links.demo !== undefined) expect(isHttpsUrl(p.links.demo)).toBe(true);
     });
 

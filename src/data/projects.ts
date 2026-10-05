@@ -17,7 +17,7 @@ export const projects: Project[] = [
       'Redis',
       'Docker',
       'Sanctum auth',
-      '45 feature tests',
+      'PHPUnit + Vitest',
       'GitHub Actions CI',
     ],
     featured: true,
@@ -29,6 +29,33 @@ export const projects: Project[] = [
     imageFocus: 'top-left',
     imageAlt:
       'Manuscript Tracker queries screen: a list of agent queries, one expanded to show its correspondence log of sent, partial requested and materials sent events.',
+  },
+  {
+    slug: 'bulk-csv-importer',
+    title: 'Bulk CSV Importer',
+    tagline: 'Import millions of rows without falling over.',
+    description:
+      'A rebuild of a naive CSV uploader into a streaming, parallel import pipeline, measured before and after. The original took 20 minutes for a million rows (and crashed at PHP\u2019s default memory limit); the rebuild does it in about 11 seconds with flat memory. Chunks split on true record boundaries, even with line breaks inside quoted fields; retries can\u2019t duplicate rows; and bad rows land in a downloadable error report instead of stopping the import.',
+    tech: [
+      'Laravel 13',
+      'React + Inertia',
+      'TypeScript',
+      'MySQL 8',
+      'Redis + Horizon',
+      'Docker',
+      'league/csv',
+      'GitHub Actions CI',
+    ],
+    featured: true,
+    status: 'local',
+    links: { code: 'https://github.com/RDBagwell/bulk-csv-importer' },
+    image: '/projects/bulk-csv-importer.webp',
+    imageWidth: 1280,
+    imageHeight: 860,
+    imageFocus: 'top-left',
+    imageAlt:
+      'Bulk CSV Importer importing a one-million-row file: a progress bar at 50.8%, about 80,000 rows per second, imported and failed row counts, and a table of the latest row errors.',
+    note: '1,000,000 rows: 20 min 20 s before, 11.1 s after (4 workers). Full method and raw results are in the repo\u2019s BENCHMARKS.md.',
   },
   {
     slug: 'chat-mafia',
@@ -52,42 +79,45 @@ export const projects: Project[] = [
   },
     {
     slug: 'rpg',
-    title: 'RPG Demo',
-    tagline: 'RPG Demo in the browser.',
+    title: 'Island RPG',
+    tagline: 'A top-down RPG on a custom engine I built.',
     description:
-      'A classic top-down RPG in the browser, built on a small custom 2D engine instead of a game framework. You explore an island, talk to people, carry an inventory, level up and fight turn-based battles.',
-    tech: ['Node.js', 'JavaScript','HTML Canvas', 'Web Audio', 'GitHub Actions CI'],
+      'A classic top-down RPG built on my own 2D engine instead of a game framework: a scene stack, Tiled map loading, collision, saves and a canvas UI toolkit. Explore two islands, talk your way through branching dialogue, recruit companions, follow a quest chain and fight turn-based battles with elemental weaknesses. Three save slots, gamepad and touch controls, and an original chiptune soundtrack.',
+    tech: ['JavaScript', 'Vite', 'Canvas 2D', 'Web Audio', 'Tiled', 'Vitest'],
     featured: false,
     status: 'live',
     links: {
       demo: 'https://rpg-demo.onrender.com/',
-      code: 'https://github.com/RDBagwell/RPG_Game',
+      // The source stays private: the licensed tileset can't be redistributed as files.
     },
+    demoLabel: 'Play',
     image: '/projects/rpg.webp',
-
     imageWidth: 1280,
     imageHeight: 720,
-    imageAlt: 'Placeholder graphic for RPG; a screenshot is coming soon.',
-    note: 'The game server sleeps when idle — the first connection can take up to a minute.',
+    imageAlt:
+      'Island RPG: pixel-art hero on a grassy island with a red-roofed cottage, villagers, a glowing save crystal and a wooden bridge over turquoise water.',
+    note: 'Tileset by Cyporkador. Source code is private because the licensed art can\u2019t be shared as files; happy to walk through it.',
   },
   {
     slug: 'reading-game',
     title: 'Reading Game',
-    tagline: 'Reading Game for children.',
+    tagline: 'A word-finding game I first built for my daughter.',
     description:
-      'When my daughter was in first grade, I noticed she didn\'t like the reading assignments her teacher had her do. She, however, liked playing video games; that is when I got the idea to create this game.',
-    tech: ['JavaScript', 'HTML Canvas', 'Web Audio'],
+      'Pip the owl says a word out loud and the child taps the matching card; a wrong tap reads that word aloud, so every mistake becomes a small lesson. Twelve levels follow the order phonics is taught, and the wrong answers get trickier too: rhymes, then look-alikes like ship, shop and chip. Stars, high scores and player profiles stay on the device, with no accounts, tracking or network requests.',
+    tech: ['JavaScript', 'SVG', 'Web Speech API', 'Web Audio', 'Vitest'],
     featured: false,
     status: 'live',
     links: {
       demo: 'https://rdbagwell.github.io/Reading_Game/',
-      code: 'https://github.com/RDBagwell/Reading_Game'
+      code: 'https://github.com/RDBagwell/Reading_Game',
     },
-    image: '/projects/reading-game.webp',
     demoLabel: 'Play',
+    image: '/projects/reading-game.webp',
     imageWidth: 960,
     imageHeight: 720,
-    imageAlt: 'Reading Game; Help your child learn to read through interactive gameplay.',
+    imageAlt:
+      'Reading Game, level 7 \u201cCake Castle\u201d: nine word cards; \u201crope\u201d glows green with confetti and +14 points, beside Pip the owl and a \u201cHear it again\u201d button.',
+    note: 'Started when my daughter was in first grade and liked video games more than her reading homework.',
   },
   {
     slug: 'bull-rush',
