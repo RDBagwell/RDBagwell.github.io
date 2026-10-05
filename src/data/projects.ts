@@ -4,33 +4,6 @@ import type { Project } from './types';
 // public/projects/, and push. Featured projects appear first, in array order.
 export const projects: Project[] = [
   {
-    slug: 'manuscript-tracker',
-    title: 'Manuscript Tracker',
-    tagline: 'Query tracking for working authors.',
-    description:
-      "A full-stack app for managing literary agent submissions, built by a novelist in the middle of querying. Every query is an append-only event ledger (sent, partial requested, materials sent, rejected), so status and response-time stats come straight from the history. It warns when an agency's “a no from one is a no from all” policy applies and schedules follow-up nudges.",
-    tech: [
-      'Laravel 13',
-      'React 18',
-      'TypeScript',
-      'PostgreSQL',
-      'Redis',
-      'Docker',
-      'Sanctum auth',
-      'PHPUnit + Vitest',
-      'GitHub Actions CI',
-    ],
-    featured: true,
-    status: 'local',
-    links: { code: 'https://github.com/RDBagwell/manuscript-tracker' },
-    image: '/projects/manuscript-tracker.webp',
-    imageWidth: 960,
-    imageHeight: 600,
-    imageFocus: 'top-left',
-    imageAlt:
-      'Manuscript Tracker queries screen: a list of agent queries, one expanded to show its correspondence log of sent, partial requested and materials sent events.',
-  },
-  {
     slug: 'bulk-csv-importer',
     title: 'Bulk CSV Importer',
     tagline: 'Import millions of rows without falling over.',
@@ -58,6 +31,33 @@ export const projects: Project[] = [
     note: '1,000,000 rows: 20 min 20 s before, 11.1 s after (4 workers). Full method and raw results are in the repo\u2019s BENCHMARKS.md.',
   },
   {
+    slug: 'manuscript-tracker',
+    title: 'Manuscript Tracker',
+    tagline: 'Query tracking for working authors.',
+    description:
+      "A full-stack app for managing literary agent submissions, built by a novelist in the middle of querying. Every query is an append-only event ledger (sent, partial requested, materials sent, rejected), so status and response-time stats come straight from the history. It warns when an agency's “a no from one is a no from all” policy applies and schedules follow-up nudges.",
+    tech: [
+      'Laravel 13',
+      'React 18',
+      'TypeScript',
+      'PostgreSQL',
+      'Redis',
+      'Docker',
+      'Sanctum auth',
+      'PHPUnit + Vitest',
+      'GitHub Actions CI',
+    ],
+    featured: true,
+    status: 'local',
+    links: { code: 'https://github.com/RDBagwell/manuscript-tracker' },
+    image: '/projects/manuscript-tracker.webp',
+    imageWidth: 960,
+    imageHeight: 600,
+    imageFocus: 'top-left',
+    imageAlt:
+      'Manuscript Tracker queries screen: a list of agent queries, one expanded to show its correspondence log of sent, partial requested and materials sent events.',
+  },
+  {
     slug: 'chat-mafia',
     title: 'Chat Mafia',
     tagline: 'Real-time multiplayer Mafia in the browser.',
@@ -77,7 +77,28 @@ export const projects: Project[] = [
     imageAlt: 'Chat Mafia game lobby screenshot.',
     note: 'The game server sleeps when idle — the first connection can take up to a minute.',
   },
-    {
+  {
+    slug: 'reading-game',
+    title: 'Reading Game',
+    tagline: 'A word-finding game I first built for my daughter.',
+    description:
+      'Pip the owl says a word out loud and the child taps the matching card; a wrong tap reads that word aloud, so every mistake becomes a small lesson. Twelve levels follow the order phonics is taught, and the wrong answers get trickier too: rhymes, then look-alikes like ship, shop and chip. Stars, high scores and player profiles stay on the device, with no accounts, tracking or network requests.',
+    tech: ['JavaScript', 'SVG', 'Web Speech API', 'Web Audio', 'Vitest'],
+    featured: true,
+    status: 'live',
+    links: {
+      demo: 'https://rdbagwell.github.io/Reading_Game/',
+      code: 'https://github.com/RDBagwell/Reading_Game',
+    },
+    demoLabel: 'Play',
+    image: '/projects/reading-game.webp',
+    imageWidth: 960,
+    imageHeight: 720,
+    imageAlt:
+      'Reading Game, level 7 \u201cCake Castle\u201d: nine word cards; \u201crope\u201d glows green with confetti and +14 points, beside Pip the owl and a \u201cHear it again\u201d button.',
+    note: 'Started when my daughter was in first grade and liked video games more than her reading homework.',
+  },
+  {
     slug: 'rpg',
     title: 'Island RPG',
     tagline: 'A top-down RPG on a custom engine I built.',
@@ -97,27 +118,6 @@ export const projects: Project[] = [
     imageAlt:
       'Island RPG: pixel-art hero on a grassy island with a red-roofed cottage, villagers, a glowing save crystal and a wooden bridge over turquoise water.',
     note: 'Tileset by Cyporkador. Source code is private because the licensed art can\u2019t be shared as files; happy to walk through it.',
-  },
-  {
-    slug: 'reading-game',
-    title: 'Reading Game',
-    tagline: 'A word-finding game I first built for my daughter.',
-    description:
-      'Pip the owl says a word out loud and the child taps the matching card; a wrong tap reads that word aloud, so every mistake becomes a small lesson. Twelve levels follow the order phonics is taught, and the wrong answers get trickier too: rhymes, then look-alikes like ship, shop and chip. Stars, high scores and player profiles stay on the device, with no accounts, tracking or network requests.',
-    tech: ['JavaScript', 'SVG', 'Web Speech API', 'Web Audio', 'Vitest'],
-    featured: false,
-    status: 'live',
-    links: {
-      demo: 'https://rdbagwell.github.io/Reading_Game/',
-      code: 'https://github.com/RDBagwell/Reading_Game',
-    },
-    demoLabel: 'Play',
-    image: '/projects/reading-game.webp',
-    imageWidth: 960,
-    imageHeight: 720,
-    imageAlt:
-      'Reading Game, level 7 \u201cCake Castle\u201d: nine word cards; \u201crope\u201d glows green with confetti and +14 points, beside Pip the owl and a \u201cHear it again\u201d button.',
-    note: 'Started when my daughter was in first grade and liked video games more than her reading homework.',
   },
   {
     slug: 'bull-rush',
