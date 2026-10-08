@@ -4,6 +4,38 @@ import type { Project } from './types';
 // public/projects/, and push. Featured projects appear first, in array order.
 export const projects: Project[] = [
   {
+    slug: 'buybox-repricer',
+    title: 'Buy Box Repricer',
+    tagline: 'Fights for the Buy Box without ever pricing at a loss.',
+    description:
+      'A clean-room rebuild of an Amazon repricer I wrote early in my career on the now-retired MWS API. Competitor price changes arrive as events; a queued job runs each product through a small, ordered, pure rules pipeline whose floor, margin and ceiling guardrails always run last and are property-tested; and every decision is audit-logged with a plain-language trace. It runs against a simulated marketplace with five competitor bots, rate-limited API quotas and injected errors, so you can watch a price war live, edit the rules, or hit the kill switch.',
+    tech: [
+      'Laravel 13',
+      'React + Inertia',
+      'TypeScript',
+      'PostgreSQL',
+      'Redis + Horizon',
+      'Laravel Reverb',
+      'Pest + Vitest + Playwright',
+      'Docker',
+      'GitHub Actions CI',
+    ],
+    featured: true,
+    status: 'live',
+    links: {
+      demo: 'https://rdbagwell.github.io/buybox-repricer/',
+      code: 'https://github.com/RDBagwell/buybox-repricer',
+    },
+    demoLabel: 'Watch it run',
+    image: '/projects/buybox-repricer.webp',
+    imageWidth: 1440,
+    imageHeight: 900,
+    imageFocus: 'top-left',
+    imageAlt:
+      'Buy Box Repricer dashboard mid price war: a price chart for a stainless French press with our price stepping down toward its floor against two competitor bots, shaded where we held the Buy Box, beside a live feed of decisions such as \u201cStrategy proposed $27.12 \u2192 margin OK \u2192 floor OK \u2192 pushed\u201d, a products table and a red kill switch.',
+    note: 'Not affiliated with Amazon. \u201cWatch it run\u201d plays a recorded run instantly; the interactive live demo is linked from the repo and takes about a minute to wake.',
+  },
+  {
     slug: 'bulk-csv-importer',
     title: 'Bulk CSV Importer',
     tagline: 'Import millions of rows without falling over.',
