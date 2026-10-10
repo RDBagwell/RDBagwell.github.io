@@ -112,6 +112,28 @@ export const projects: Project[] = [
     note: 'Measured: about 3 kB/s per player, and one CPU core runs roughly 600 matches at a steady 60 Hz. The server sleeps when idle; play the computer offline while it wakes.',
   },
   {
+    slug: 'emberwake',
+    title: 'Emberwake',
+    tagline: 'A 3D action-adventure with a game-feel lab built in.',
+    description:
+      'A short 3D action-adventure in the browser: a village, a dungeon and a two-phase boss, with sword-and-shield combat, lock-on, parries and dodges, plus NPCs, branching dialogue, quests and saves. Its other half is a game-feel lab: switch off hit-stop, input buffering, i-frames, telegraphs or camera smoothing mid-fight and feel why each one exists, with hitboxes, the state machine and the input buffer drawn on screen. Combat runs on frame data, the dialogue and quest systems are ported from my 2D Island RPG, and levels are built in Blender by naming convention.',
+    tech: ['Three.js', 'Rapier physics', 'JavaScript', 'Vite', 'Web Audio', 'Blender + glTF', 'Vitest + Playwright'],
+    featured: true,
+    status: 'live',
+    links: {
+      demo: 'https://rdbagwell.github.io/3D_Game/',
+      code: 'https://github.com/RDBagwell/3D_Game',
+    },
+    demoLabel: 'Play',
+    image: '/projects/emberwake.webp',
+    imageWidth: 1280,
+    imageHeight: 720,
+    imageFocus: 'center',
+    imageAlt:
+      'Emberwake with the game-feel lab open: the hero mid-slash at a training dummy, with hitboxes and hurtboxes drawn as wireframes, beside a panel of feel presets (Polished, Raw, Floaty, Twitchy), the hero\u2019s state machine on frame 8 of 28 of its attack, and an input-buffer timeline.',
+    note: 'Keyboard and mouse, gamepad or touch. Add ?lab to the address to open the game-feel lab straight away.',
+  },
+  {
     slug: 'pips-playroom',
     title: "Pip's Playroom",
     tagline: 'Four learning games I first built for my daughter.',
@@ -215,23 +237,6 @@ export const projects: Project[] = [
     imageAlt:
       'Shooter gameplay: a mechanical seahorse and a toothy mechanical anglerfish over a steampunk city of gears and pipes, with the score and ammo bar along the top.',
     // TODO(robert): optional tutorial credit, e.g. note: 'Built following a tutorial by …'
-  },
-  {
-    slug: '3d-game',
-    title: '3D Game',
-    tagline: 'A 3D action prototype.',
-    description:
-      'A third-person 3D prototype with a physics-driven animated character, an enemy robot, Xbox gamepad controls and positional sound.',
-    tech: ['Three.js', 'Rapier physics', 'Vite', 'JavaScript'],
-    featured: false,
-    status: 'coming-soon',
-    // No demo yet: the repo has no Pages build step, so its live page doesn't run.
-    links: { code: 'https://github.com/RDBagwell/3D_Game' },
-    // TODO(robert): replace the placeholder with a real screenshot.
-    image: '/projects/3d-game-placeholder.svg',
-    imageWidth: 1280,
-    imageHeight: 720,
-    imageAlt: 'Placeholder graphic for 3D Game; a screenshot is coming soon.',
   },
 ];
 
